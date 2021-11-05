@@ -8,18 +8,18 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: scripts/UnzipResourceBundle.sh
-    - location: scripts/UnzipDataBundle.sh
+    - location: Scripts/UnzipResourceBundle.sh
+    - location: Scripts/UnzipDataBundle.sh
 
   AfterInstall:
-    - location: scripts/RunResourceTests.sh  
+    - location: Scripts/RunResourceTests.sh  
       timeout: 180
 
   ApplicationStart:
-    - location: scripts/RestartServer.sh  
+    - location: Scripts/RestartServer.sh  
       timeout: 240
 
   ValidateService:
-    - location: scripts/ValidateService.sh
+    - location: Scripts/ValidateService.sh
       timeout: 30
       runas: codedeployuser

@@ -5,21 +5,3 @@ os: linux
 files:
   - source: /
     destination: /var/www/
-
-hooks:
-  BeforeInstall:
-    - location: Scripts/UnzipResourceBundle.sh
-    - location: Scripts/UnzipDataBundle.sh
-
-  AfterInstall:
-    - location: Scripts/RunResourceTests.sh  
-      timeout: 180
-
-  ApplicationStart:
-    - location: Scripts/RestartServer.sh  
-      timeout: 240
-
-  ValidateService:
-    - location: Scripts/ValidateService.sh
-      timeout: 30
-      runas: codedeployuser

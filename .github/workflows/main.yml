@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-	
+
       # Initialize Node.js
       - name: Install Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -39,7 +39,7 @@ jobs:
     needs: buildAndTest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Create env file
         run: |
           touch .env
@@ -65,7 +65,7 @@ jobs:
           unzip awscliv2.zip
           which aws
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
-        
+
       # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1

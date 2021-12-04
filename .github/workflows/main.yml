@@ -22,9 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Install project dependencies, test and build
       - name: Install dependencies
         run: npm install
+
       - name: Run build
         run: npm run build
 
@@ -40,13 +40,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Create env file
-        run: |
-          touch .env
-          echo PORT=8081 >> .env
-          echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
-          cat .env
-
       - name: Install Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -58,7 +51,6 @@ jobs:
       - name: Run build
         run: npm run build
 
-      # Install AWS CLI 2
       - name: Install AWS CLI 2
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -66,7 +58,6 @@ jobs:
           which aws
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
 
-      # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

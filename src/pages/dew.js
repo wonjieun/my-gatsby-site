@@ -18,7 +18,7 @@ const DewPage = () => {
       <title>Dew Page</title>
       <h1 style={headingStyles}>이슬이네</h1>
       <p align="center">
-        <img alt="이슬" src={politeDew} width="500" />
+        <img alt="이슬" src={politeDew} width="100%" />
       </p>
       <h2 align="center">어서오세요 🙇🏻‍♀️</h2>
     </main>

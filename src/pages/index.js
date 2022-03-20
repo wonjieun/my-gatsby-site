@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 
 const pageStyles = {
   color: '#232129',
@@ -26,7 +27,7 @@ const IndexPage = () => {
           🎉🎉
         </span>
       </h1>
-      <div>이슬이네</div>
+      <Link to="/dew">이슬이네</Link>
     </main>
   );
 };

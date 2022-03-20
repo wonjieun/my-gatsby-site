@@ -18,15 +18,7 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Jina
-        <br />
-        <span style={headingAccentStyles}>— a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉
-        </span>
-      </h1>
-      <div>이슬이네</div>
+      <h1 style={headingStyles}>이슬이네</h1>
     </main>
   );
 };

@@ -4,16 +4,12 @@ module.exports = {
     title: "Jina❤️",
   },
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
-      __key: "images",
     },
   ],
 };

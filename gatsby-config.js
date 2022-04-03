@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://meblog.gatsbyjs.io',
     title: 'Jina❤️',
+    siteUrl: 'https://meblog.gatsbyjs.io',
+    description: '안녕하세요. 원지은 입니다.',
   },
   plugins: [
     'gatsby-plugin-sass',

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import '../index.scss';
 
 const pageStyles = {
@@ -16,7 +16,7 @@ const headingAccentStyles = {
   color: '#663399',
 };
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
@@ -27,9 +27,20 @@ const IndexPage = () => {
           🎉🎉
         </span>
       </h1>
+      <p>{data.site.siteMetadata.description}</p>
       <Link to="/dew">이슬이네</Link>
     </main>
   );
 };
+
+export const query = graphql`
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        description
+      }
+    }
+  }
+`;
 
 export default IndexPage;
